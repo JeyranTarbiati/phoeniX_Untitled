@@ -103,7 +103,8 @@ than 25 we go to the next number until the time that they are equal so in this m
 
 line2
 
- _start:   
+ _start: 
+ 
     li s2,0b11001             # 0b11001 is equal to 25 we want find the second root of it
 
     li s4, 0                  # Initialize result to 0 => the result of squaring will be loaded in s4

@@ -4,7 +4,7 @@ Computer Organization - Spring 2024
 ## Assignment 1: Assembly code execution on phoeniX RISC-V core
 
 - Name:Jeyran Tarbiati
-- Team Members:Rozha Hasheminezhad
+- Team Members:Rozha Hasheminezhad- Jeyran Tarbiati
 - Student ID: 400411261
 - Date:1403/3/4
 
@@ -17,17 +17,20 @@ line 4-26:
 li a1, 9    : loading the number we want to save
 sw a1, 0(a0) :save the number existing in register a1 to the defined adress
 our saved numbers: [9,6,3,12,10,7]
+
 start:
     li a2, 4
     li t6, 0x0 : the most right position
     li a7 , 0x0  :the most right position
     lw t0, 0(a0)   : the point of this line is defining our pivot number (pivot number is in a0=0x14,the most left number)
+
 loop:
     lw t1, 0(t6)
     bge t0, t1, pointer :selecting our pointer how? by compairing the pivot with element in address 0x0 to 0x10 , the first larger number than pivot is making our pointer
 what does loop do? loop will repeat till we find our pointer
 next step: after findig our pivot and pointer the next step is to find numbers less than the pivot
 the label pointer is comparing the pivot with the numbers after the pointer if our current element is less than pivot the program jumps to the swap label otherwise the pointer will repeat again
+
 pointer:
     lw s9, 0(t6) 
     lw t3, 4(a7)
@@ -45,10 +48,12 @@ swap:
     addi t6, t6, 4
     j loop
 we repeat this algorithem till we reach this layout
+
 [6,3,7,12,10,9]
 all the smaller number than pivot are at the left of pivot and all the greater number than pivot are at the right of the pivot 
 we repeat the above algorithm for right_side numbers and left_side numbers separatly 
 and the result will be:
+
 [3,6,7,9,10,12]
 https://github.com/phoeniX-Digital-Design/phoeniX/issues/1#issue-2315514127
 - for the waveform of this code we got two different errors during the project even though we asked from TAs and searching for the problem we couldn't solve it.

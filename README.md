@@ -16,11 +16,11 @@ line 4-26:
 
  here we are saving the list of numbers we want to sort. Here is an example for saving a number in memory:
  
-li a0, 0x0              : adress of the destination of memory
+     li a0, 0x0              : adress of the destination of memory
 
-li a1, 9                : loading the number we want to save
+     li a1, 9                : loading the number we want to save
 
-sw a1, 0(a0)            :save the number existing in register a1 to the defined adress
+     sw a1, 0(a0)            :save the number existing in register a1 to the defined adress
 
 our saved numbers: [9,6,3,12,10,7]
 

@@ -35,6 +35,7 @@ start:
               lw t0, 0(a0)        : the point of this line is defining our pivot number (pivot number is in a0=0x14,the most left number)
 
 loop:
+
               lw t1, 0(t6)
     
               bge t0, t1, pointer       :selecting our pointer how? by compairing the pivot with element in address 0x0 to 0x10 , the first larger number than pivot is making our pointer
@@ -62,6 +63,7 @@ the job of swap label: the swap label will replace the value of the pointer with
 after that again we jump to loop to find the new pointer
 
 swap:
+
     sw t3, 0(t6) 
     
     sw t1, 4(a7)
@@ -100,7 +102,8 @@ SUMMERY:In this code first we choose one number as base number like number 1 the
 
 line2
 
- _start:  
+  _start:  
+ 
              li s2,0b11001                0b11001 is equal to 25 we want find the second root of it
 
             li s4, 0                      # Initialize result to 0 => the result of squaring will be loaded in s4
@@ -116,6 +119,7 @@ the first number we want to square is 1
 algorithem of squaring:
 
 sqar:
+
            and  a3, t2, t1 
            
            beqz a3, akip
@@ -140,6 +144,6 @@ skip:
     
 https://github.com/phoeniX-Digital-Design/phoeniX/issues/2#issue-2315624531
 
-- these are the error for second question:
+- these are the errors for second question:
 - 
 https://github.com/phoeniX-Digital-Design/phoeniX/issues/4#issue-2315634797

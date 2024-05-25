@@ -122,7 +122,7 @@ sqar:
 
            and  a3, t2, t1 
            
-           beqz a3, akip
+           beqz a3, skip
            
            sll  a3, t2, a1 
     
